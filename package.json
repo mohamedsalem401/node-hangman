@@ -1,0 +1,23 @@
+{
+  "name": "node-hangman",
+  "version": "1.0.0",
+  "description": "Hangman is a popular word-guessing game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedsalem401/node-hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedsalem401/node-hangman/issues"
+  },
+  "homepage": "https://github.com/mohamedsalem401/node-hangman#readme"
+}
