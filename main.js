@@ -1,6 +1,7 @@
+//@ts-check
 const readline = require('readline');
 const { getRandomWord, isLetterInWord, revealLetterPositions } = require('./hangmanUtils');
-const { MAX_ATTEMPTS } = require('./hangmanConstants');
+const { MAX_ATTEMPTS, guessedWordColor, resetColor, guessedLettersColor, remainingLivesColor,  } = require('./hangmanConstants');
 
 function initializeGame() {
     const word = getRandomWord();
@@ -14,9 +15,26 @@ function initializeGame() {
 
 function displayGameState(gameState) {
     const { revealedPositions, remainingAttempts, guessedLetters } = gameState;
-    console.log(`Word: ${revealedPositions.join(' ')}`);
-    console.log(`Remaining Attempts: ${remainingAttempts}`);
-    console.log(`Guessed Letters: ${guessedLetters.join(', ')}`);
+
+    const formattedWord = getRevealedWord(revealedPositions);
+    const formattedAttempts = getRemainingAttempts(remainingAttempts);
+    const formattedLetters = getGuessedLetters(guessedLetters);
+
+    console.clear();
+    console.log(`Remaining Attempts: ${formattedAttempts}  |  Guessed Letters: ${formattedLetters}`);
+    console.log(`Word: ${formattedWord}`);
+}
+
+function getGuessedLetters(guessedLetters) {
+    return guessedLetters.map(letter => `${guessedLettersColor}${letter}${resetColor}`).join(', ');
+}
+
+function getRemainingAttempts(remainingAttempts) {
+    return `${remainingLivesColor}${remainingAttempts} ♡${resetColor}`;
+}
+
+function getRevealedWord(revealedPositions) {
+    return revealedPositions.map(letter => `${guessedWordColor}${letter}${resetColor}`).join(' ');
 }
 
 function promptLetter(gameState, rl) {
