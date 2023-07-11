@@ -1,7 +1,8 @@
 //@ts-check
 const readline = require('readline');
 const { getRandomWord, isLetterInWord, revealLetterPositions } = require('./hangmanUtils');
-const { MAX_ATTEMPTS, guessedWordColor, resetColor, guessedLettersColor, remainingLivesColor,  } = require('./hangmanConstants');
+const { MAX_ATTEMPTS, guessedWordColor, resetColor, guessedLettersColor, hangmanColor } = require('./hangmanConstants');
+const { HANGMANPICS } = require('./hangmanASCII');
 
 function initializeGame() {
     const word = getRandomWord();
@@ -30,7 +31,9 @@ function getGuessedLetters(guessedLetters) {
 }
 
 function getRemainingAttempts(remainingAttempts) {
-    return `${remainingLivesColor}${remainingAttempts} ♡${resetColor}`;
+    const index = Math.floor(HANGMANPICS.length - ((remainingAttempts / MAX_ATTEMPTS ) * ( HANGMANPICS.length - 1 )));
+    const hangmanDrawing = HANGMANPICS[index - 1];
+    return `${hangmanColor}${hangmanDrawing}${resetColor}`;
 }
 
 function getRevealedWord(revealedPositions) {
@@ -69,6 +72,7 @@ function promptLetter(gameState, rl) {
         } else {
             gameState.remainingAttempts--;
             if (remainingAttempts === 0) {
+                console.clear();
                 console.log('Game Over!');
                 console.log(`The word was: ${word}`);
                 rl.close();
