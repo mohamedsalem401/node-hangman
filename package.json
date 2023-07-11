@@ -4,7 +4,8 @@
   "description": "Hangman is a popular word-guessing game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",

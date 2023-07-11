@@ -1,0 +1,33 @@
+# Hangman Game
+
+Hangman is a classic word-guessing game where players try to guess a word by suggesting letters. This is a command-line version of Hangman implemented in Node.js.
+
+## How to Play
+
+1. Install Node.js: Make sure you have Node.js installed on your machine.
+
+2. Clone the Repository: Clone this repository to your local machine.
+
+3. Install Dependencies: Navigate to the project directory and run the following command to install the required dependencies:
+
+4. Start the Game: Run the following command to start the Hangman game:
+
+5. Gameplay: The game will prompt you to enter a letter. Enter a single letter at a time and press Enter. Keep guessing letters to reveal the hidden word.
+
+6. Game State: After each guess, the current state of the word, the remaining attempts (lives), and the guessed letters will be displayed.
+
+7. Win or Lose: Keep guessing until you either guess the word correctly or run out of attempts. If you guess the word correctly, you win the game. If you run out of attempts, you lose the game.
+
+## Customization
+
+- Word List: You can customize the list of words used in the game by modifying the `words.json`. Add or remove words to tailor the game to your liking.
+
+- ASCII Art: The Hangman ASCII art drawings are stored in the `hangmanASCII.js` file. You can modify or replace the existing drawings with your own ASCII art or create new ones to represent the hangman at different stages.
+
+## License
+
+All Rights Reserved
+
+This project is the intellectual property of Mohamed Yahia. All rights are reserved. No part of this project may be distributed, or transmitted in any form or by any means, including copying, without the prior written permission of the owner.
+
+For inquiries, please contact salemmohamed@gmail.com :)
